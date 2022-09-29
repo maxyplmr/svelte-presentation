@@ -24,31 +24,31 @@
 
 <script>
     const random = (max) => Math.floor(Math.random() * (max - 0 + 1))
-    import Element from "./sub-components/Element.svelte";
-    import Board from "./sub-components/Board.svelte";
-    import Title from "./sub-components/Title.svelte";
+    import Element from "./sub-components/Element.svelte"
+    import Board from "./sub-components/Board.svelte"
+    import Title from "./sub-components/Title.svelte"
 
     let elements = []
     let background = `rgb(255, 255, 255)`
     let animationIndex = -1
     let title = 'PLMR'
 
-    $:cssVars = `--background: ${background};`
+    $:cssVars = `--background: ${ background };`
 
-    function addElement({detail: element}) {
+    function addElement({ detail: element }) {
         elements = [...elements, ...element]
     }
 
     function removeElement() {
-        const [, ...rest] = elements
+        const [a, b, c, d, e, ...rest] = elements
         elements = rest
     }
 
-    function setColor({detail: color}) {
+    function setColor({ detail: color }) {
         background = color
     }
 
-    function setTitle({detail: newTitle}) {
+    function setTitle({ detail: newTitle }) {
         title = newTitle
     }
 
